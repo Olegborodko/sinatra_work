@@ -1,0 +1,27 @@
+<h1>Posts of <%= @user.login %></h1>
+<a href="/">Go to index</a>
+
+<ul>
+<% @posts.each do |post| %>
+
+<li><%= post.title %></li>
+<li><%= post.text %></li>
+<br>
+<form action="/delete_post" method="post">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="hidden" name="id" value="<%= post.id %>">
+	<input type="hidden" name="user_id" value="<%= @user.id %>">
+	<input type="submit" value="Click for delete">
+</form>
+
+
+<% end %>
+</ul>
+
+<br><br><br>
+<form action="/add_post" method="post">
+	Title <input type="text" name="title" value=""><br>
+	Body <input type="text" name="text" value=""><br>
+	<input type="hidden" name="id" value="<%= @user.id %>">
+	<input type="submit" value="Add post">
+</form>
