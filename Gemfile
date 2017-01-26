@@ -6,7 +6,7 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'active_model_serializers'
 gem 'rake'
-gem 'json',
+gem 'json'
 gem 'haml'
 gem 'thin'
 
