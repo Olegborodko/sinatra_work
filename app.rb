@@ -54,20 +54,20 @@ post "/users" do
 end
 
 get '/users_json' do
-  @users = User.all
-  content_type :json
-  @users.to_json
+	@users = User.all
+	content_type :json
+	@users.to_json
 end
 
 get '/posts_json' do
-  @posts = Post.all
-  content_type :json
-  @posts.to_json
+	@posts = Post.all
+	content_type :json
+	@posts.to_json
 end
 
 get '/users' do
-  @users = User.all
-
+	@users = User.all
+	
 	erb :"users"
 end
 

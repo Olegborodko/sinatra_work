@@ -4,3 +4,8 @@ development:
   database: db/base.sqlite3
   pool: 5
   timeout: 5000
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  database: db/base.sqlite3
