@@ -1,0 +1,9 @@
+<h1>Users html</h1>
+<a href="/">Go to index</a>
+<ul>
+<% @users.each do |user| %>
+
+<li><%= user.login %> | <%= user.age %> | <%= user.description %> | </li>
+
+<% end %>
+</ul>

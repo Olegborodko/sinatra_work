@@ -1,5 +1,6 @@
 development:
   adapter: sqlite3
+  ncoding: utf8
   database: db/base.sqlite3
   pool: 5
   timeout: 5000

@@ -7,29 +7,29 @@ require "./models/post"
 
 get "/" do
 	@users = User.all
-	erb :"index"
+	haml :"index"
 end
 
-get "/posts/:id" do
-	@user = User.find(params[:id])
+get "/users/:id" do
+	@user = User.find params[:id]
 	@posts = @user.posts
-	erb :"posts"
+	erb :"user"
 end
 
-delete "/delete_post" do
-	post = Post.find(params[:id])
+delete "/posts/:id/users/:user_id" do
+	post = Post.find params[:id]
 	post.destroy
-	redirect "/posts/#{params[:user_id]}"
+	redirect "/users/#{params[:user_id]}"
 end
 
-delete "/delete" do
-	user = User.find(params[:id])
+delete "/users/:id" do
+	user = User.find params[:id]
 	user.destroy
 	redirect "/"
 end
 
-post "/add_post" do
-	user = User.find(params[:id])
+post "/posts" do
+	user = User.find params[:id]
 
 	post = Post.new
 	post.title = params[:title]
@@ -37,48 +37,38 @@ post "/add_post" do
 	post.user = user
 
 	if post.save
-		redirect "posts/#{params[:id]}"
+		redirect "/users/#{params[:id]}"
 	else
-
+		redirect "/"
 	end
 end
 
-post "/add_user" do
+post "/users" do
 	user = User.new
 	user.login = params[:login]
 	user.age = params[:age]
 	user.description = params[:description]
 
-	if user.save
-		redirect "/"
-	else
-
-	end
+	user.save
+	redirect "/"
 end
 
-get '/users.json' do
+get '/users_json' do
   @users = User.all
   content_type :json
   @users.to_json
 end
 
-get '/posts.json' do
+get '/posts_json' do
   @posts = Post.all
   content_type :json
   @posts.to_json
 end
 
-get '/users.html' do
-	result = '<ul>'
-  all = User.all
-  all.each do |user|
-  	result = result + "<li>#{user.login}</li>"
-  	result = result + "<li>#{user.age}</li>"
-  	result = result + "<li>#{user.description}</li><br><br>"
-  end
-  result = result + '</ul>'
-  content_type 'text/html,  :charset => utf-8'
-  "#{result}"
+get '/users' do
+  @users = User.all
+
+	erb :"users"
 end
 
 ActiveRecord::Base.configurations = YAML::load(IO.read('config/database.yml'))
