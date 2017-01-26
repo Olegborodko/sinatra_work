@@ -8,4 +8,3 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 10
-  database: db/base.sqlite3
