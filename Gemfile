@@ -9,15 +9,15 @@ gem 'rake'
 gem 'json'
 gem 'haml'
 gem 'thin'
-
+gem 'pg'
 
 group :development do
 	gem 'shotgun','0.9.2'
-	gem 'sqlite3','1.3.13'
+	#gem 'sqlite3','1.3.13'
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 group :test do

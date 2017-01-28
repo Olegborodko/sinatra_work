@@ -1,10 +1,16 @@
 development:
-  adapter: sqlite3
-  ncoding: utf8
-  database: db/base.sqlite3
+  adapter: postgresql
+  ncoding: unicode
   pool: 5
   timeout: 5000
+  host: localhost
+  username: pguser
+  password: 27041984
+  database: test
 production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  username: pguser
+  password: 27041984
+  database: test
