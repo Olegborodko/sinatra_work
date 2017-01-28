@@ -11,6 +11,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  host: localhost
   username: pguser
   password: 27041984
   database: test
