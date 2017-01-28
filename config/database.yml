@@ -7,3 +7,13 @@ development:
   username: pguser
   password: 27041984
   database: test
+production:
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  host: localhost
+  port: 5432
+  username: pguser
+  password: 27041984
+  database: test
