@@ -2,7 +2,6 @@ require "rubygems"
 require "sinatra"
 require "sinatra/activerecord"
 require "json"
-require './config/environments'
 require "./models/user"
 require "./models/post"
 
