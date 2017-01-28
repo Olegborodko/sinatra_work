@@ -2,6 +2,7 @@ require "rubygems"
 require "sinatra"
 require "sinatra/activerecord"
 require "json"
+require './config/environments'
 require "./models/user"
 require "./models/post"
 
@@ -71,5 +72,5 @@ get '/users' do
 	erb :"users"
 end
 
-ActiveRecord::Base.configurations = YAML::load(IO.read('config/database.yml'))
-ActiveRecord::Base.establish_connection(:development)
+#ActiveRecord::Base.configurations = YAML::load(IO.read('config/database.yml'))
+#ActiveRecord::Base.establish_connection(:development)
