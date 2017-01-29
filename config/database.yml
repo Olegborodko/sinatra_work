@@ -16,6 +16,7 @@ production:
   host: localhost
   port: 5432
   username: pguser
+  timeout: 30000
   password: 27041984
   database: test
 test:
