@@ -8,7 +8,6 @@ gem 'active_model_serializers'
 gem 'rake'
 gem 'json'
 gem 'haml'
-gem 'thin'
 gem 'pg'
 gem 'puma'
 
