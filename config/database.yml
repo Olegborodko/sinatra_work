@@ -13,7 +13,6 @@ production:
   encoding: unicode
   host: localhost
   pool: 10
-  host: localhost
   port: 5432
   username: pguser
   timeout: 30000

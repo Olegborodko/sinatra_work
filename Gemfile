@@ -10,6 +10,7 @@ gem 'json'
 gem 'haml'
 gem 'thin'
 gem 'pg'
+gem 'puma'
 
 group :development do
 	gem 'shotgun','0.9.2'
