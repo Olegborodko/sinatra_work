@@ -12,8 +12,8 @@ gem 'pg'
 gem 'puma'
 
 group :development do
-	gem 'shotgun','0.9.2'
-	#gem 'sqlite3','1.3.13'
+  gem 'shotgun','0.9.2'
+  #gem 'sqlite3','1.3.13'
 end
 
 group :production do
